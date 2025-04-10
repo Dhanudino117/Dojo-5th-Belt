@@ -16,7 +16,7 @@ def can_place_flowers(flowerbed, n):
     
     return count >= n
 
-# Taking input
+
 size = int(input())
 n = int(input())
 flowerbed = list(map(int, input().split()))

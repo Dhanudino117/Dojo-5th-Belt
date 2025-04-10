@@ -1,27 +1,18 @@
-# def is_rotaded_palindrome(s):
-#     n = len(s)
-#     double = s+s
-    
-#     def is_palindrome(sub):
-#         return sub == sub[:: -1]
-    
-#     for i in range(n):
-#         if is_palindrome(double[i:i+n]):
-#             return "Yes the rotaded string is a palindrome"
-#     return "No, the rotated string is not a palindrome"
-        
-# s = input().strip()
-# print(is_rotaded_palindrome(s))
+s = input()
+char_count = {}
 
-def is_rotated_palindrome(s):
-    n = len(s)
-    double = s+s
-    def is_palindrome(sub):
-        return sub == sub[::-1]
-    for i in range(n):
-        if is_palindrome(double[i:i+n]):
-            return "Yes the rotated string is a palindrome"
-    return "No, the rotated string is not a palindrome"
+for i in s:
+  if i in char_count:
+    char_count[i] +=1 
+  else:
+    char_count[i] =1 
 
-s = input().split()
-print(is_rotated_palindrome(s))
+odd_count = 0
+for i in char_count.values():
+  if i %2 !=0:
+    odd_count +=1 
+  
+if odd_count <= 1:
+  print("yes")
+else:
+  print("No")
